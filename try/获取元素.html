@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<script>
+window.onload=function(){
+	var aLi=document.querySelectorAll('li');
+	/*(for(var i=0; i<aLi.length; i++){
+		aLi[i].style.background='red';
+	}*/
+	var aInput=document.querySelectorAll('input');
+	alert(aInput.length);
+	var input=document.querySelector('input');
+	input.style.background='red';
+};
+</script>
+</head>
+
+<body>
+<div id="box">
+	<ul>
+		<li class="on"><input type="text" /></li>
+		<li class="active"><input type="button" value="aa" /></li>
+		<li class="on"><input type="text" /></li>
+		<li class="active"><input type="button" value="aa" /></li>
+	</ul>
+	<ol>
+		<li class="on"><input type="text" /></li>
+		<li class="active"><input type="button" value="aa" /></li>
+		<li class="on"><input type="text" /></li>
+		<li class="active"><input type="button" value="aa" /></li>
+	</ol>
+</div>
+</body>
+</html>

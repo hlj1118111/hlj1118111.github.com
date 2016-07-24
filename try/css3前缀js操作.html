@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+div{ height:500px; width:500px; background:red;}
+div:active{ height:300px; width:300px;}
+</style>
+<script>
+function setC3Style(obj,sName,sValue){
+	obj.style[sName]=sValue;
+	obj.style['Webkit'+sName.charAt(0).toUpperCase()+sName.substring(1)]=sValue;
+	obj.style['Moz'+sName.charAt(0).toUpperCase()+sName.substring(1)]=sValue;
+	obj.style['ms'+sName.charAt(0).toUpperCase()+sName.substring(1)]=sValue;
+	obj.style['O'+sName.charAt(0).toUpperCase()+sName.substring(1)]=sValue;
+	
+}
+window.onload=function(){
+	var oDiv=document.querySelector('div');
+	setC3Style(oDiv,'transition','1s all ease');
+};
+</script>
+</head>
+
+<body>
+<div></div>
+</body>
+</html>

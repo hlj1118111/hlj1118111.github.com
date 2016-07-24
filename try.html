@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+@keyframes box{
+	form { top:0px}
+	to {top:-30px;}
+	}
+@-webkit-keyframes box{
+	form { top:0px}
+	to {top:-30px;}
+	}
+	
+@-moz-keyframes box{
+	form { top:0px}
+	to {top:-30px;}
+	}
+@-ms-keyframes box{
+	form { top:0px}
+	to {top:-30px;}
+	}
+@-o-keyframes box{
+	form { top:0px}
+	to {top:-30px;}
+	}	
+.input{ margin-right:20px; float:left;}
+.box{ height:20px; width:300px; border-radius:15px; border:1px solid #ccc; margin-top:50px; position:relative; overflow:hidden; }                               
+.box div{ height:80px;position:absolute; top:0px; left:0px; width:300px;
+ background:-webkit-repeating-linear-gradient(-45deg,red 0px,red 10px,#ff8000 10px ,#ff8000 20px ); 
+ background:-moz-repeating-linear-gradient(-45deg,red 0px,red 10px,#ff8000 10px ,#ff8000 20px ); 
+ background:-ms-repeating-linear-gradient(-45deg,red 0px,red 10px,#ff8000 10px ,#ff8000 20px ); 
+ background:-o-repeating-linear-gradient(-45deg,red 0px,red 10px,#ff8000 10px ,#ff8000 20px ); 
+-webkit-animation:box .8s linear infinite;
+-moz-animation:box .8s linear infinite;
+-ms-animation:box .8s linear infinite;
+-o-animation:box .8s linear infinite;
+}
+.box div:hover{
+	-webkit-animation-play-state:paused;	
+	-moz-animation-play-state:paused;
+	-ms-animation-play-state:paused;
+	-o-animation-play-state:paused;
+	
+}
+
+</style>
+<script>
+
+window.onload=function(){
+	var aInput=document.querySelectorAll('input');
+	var aSpan=document.querySelectorAll('span');
+	var oBoxDiv=document.querySelector('.box div')
+	for(var i=0; i<aInput.length; i++){
+		(function(index){
+			aInput[i].onchange=function(){
+				aSpan[index].style.color=this.value;
+				aSpan[index].innerHTML=this.value;
+				oBoxDiv.style.background='-webkit-repeating-linear-gradient(-45deg,'+aInput[0].value+' 0px,'+aInput[0].value+' 10px,'+aInput[1].value+' 10px ,'+aInput[1].value+' 20px )';
+			};
+		})(i);		
+	}
+};
+</script>
+</head>
+
+<body>
+<div class="input">
+    <input type="color" value="#ff0000" ><br>
+    <span>#ff0000</span>
+</div>
+<div>
+    <input type="color" value="#ff8000" ><br>
+    <span>#ff8000</span>
+</div>
+
+<div class="box">
+	<div></div>
+</div>
+</body>
+</html>

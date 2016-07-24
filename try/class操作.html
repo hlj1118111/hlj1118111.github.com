@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+.add{ background:red; border-raduis:50%; box-shadow:10px 10px 20px #000; height:300px; width:300px;}
+</style>
+<script>
+window.onload=function(){
+	var oDiv=document.querySelector('div');
+	oDiv.classList.add('add');
+	oDiv.classList.remove('add');
+	document.onclick=function(){
+		oDiv.classList.toggle('add');
+		oDiv.style.transition=oDiv.classList.contains('add')? '1s all ease':'';
+		oDiv.style.WebkitTransition=oDiv.classList.contains('add')? '1s all ease':'';
+		oDiv.style.MozTransition=oDiv.classList.contains('add')? '1s all ease':'';
+		oDiv.style.msTransition=oDiv.classList.contains('add')? '1s all ease':'';
+		oDiv.style.OTransition=oDiv.classList.contains('add')?'1s all ease':'';
+	};
+	alert(oDiv.classList.length);
+	
+	
+};
+</script>
+</head>
+
+<body>
+<div class="on active"></div>
+</body>
+</html>
