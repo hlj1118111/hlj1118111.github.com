@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+
+<style>
+input{width:50px; height:50px;}
+</style>
+<script>
+window.onload=function(){
+	var oBtn=document.querySelector('input');
+	var w1=null;
+	w1=navigator.geolocation.watchPosition(function(pos){
+		alert(pos.coords.longitude+','+pos.coords.latitude);
+		
+	},function(){		
+		alert('失败');
+	});
+	oBtn.onclick=function(){
+		navigator.geolocation.clearWatch(w1);
+	};
+	
+};
+</script>
+</head>
+
+<body>
+<input type="button" value="暂停" />
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
